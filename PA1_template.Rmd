@@ -32,9 +32,9 @@ stepsPerDay <- tapply(activity$steps, activity$date, sum)
 
 Making a histogram of the total number of steps taken each day:
 ```{R}
-
+png("stepsPerDay.png")
 hist(stepsPerDay, xlab= "Steps Per Day", main= " ", col=c("green"))
-
+dev.off()
 ```
 
 Calculating the mean and median of the total number of steps taken per day:
@@ -57,7 +57,7 @@ stepsInterval <- aggregate(steps ~ interval, data = activityNoNA, FUN = "mean")
  png("figures/dailyActivity.png")
 plot(stepsInterval, type="l",xlab="Interval", ylab="Steps", col=c("red"), main = "Daily Activity Pattern")
 interval = stepsInterval$interval[which.max(stepsInterval$steps)]
-device.off()
+dev.off()
 ```
 
 
@@ -110,8 +110,9 @@ summary(activityFilled)
 mean <- mean(activityFilled[,1])
 median <- median(activityFilled[,1])
 stepsPerDay <- tapply(activityFilled$steps, activityFilled$date, sum)
+png("stepsPerDayNonoise.png")
 hist(stepsPerDay, xlab= "Steps Per Day", main="After Filling NA Values with Means",col=c("yellow"))
-
+dev.off()
 ```
 
 ####Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
