@@ -33,7 +33,7 @@ stepsPerDay <- tapply(activity$steps, activity$date, sum)
 Making a histogram of the total number of steps taken each day:
 
 ```r
-png("stepsPerDay.png")
+png("figures/stepsPerDay.png")
 hist(stepsPerDay, xlab= "Steps Per Day", main= " ", col=c("green"))
 dev.off()
 ```
@@ -133,7 +133,7 @@ summary(activityFilled)
 mean <- mean(activityFilled[,1])
 median <- median(activityFilled[,1])
 stepsPerDay <- tapply(activityFilled$steps, activityFilled$date, sum)
-png("stepsPerDayNonoise.png")
+png("figures/stepsPerDayNonoise.png")
 hist(stepsPerDay, xlab= "Steps Per Day", main="After Filling NA Values with Means",col=c("yellow"))
 dev.off()
 ```

@@ -219,7 +219,7 @@ stepsPerDay &lt;- tapply(activity$steps, activity$date, sum)
 
 <p>Making a histogram of the total number of steps taken each day:</p>
 
-<pre><code class="r">png(&quot;stepsPerDay.png&quot;)
+<pre><code class="r">png(&quot;figures/stepsPerDay.png&quot;)
 hist(stepsPerDay, xlab= &quot;Steps Per Day&quot;, main= &quot; &quot;, col=c(&quot;green&quot;))
 dev.off()
 </code></pre>
@@ -311,7 +311,7 @@ summary(activityFilled)
 <pre><code class="r">mean &lt;- mean(activityFilled[,1])
 median &lt;- median(activityFilled[,1])
 stepsPerDay &lt;- tapply(activityFilled$steps, activityFilled$date, sum)
-png(&quot;stepsPerDayNonoise.png&quot;)
+png(&quot;figures/stepsPerDayNonoise.png&quot;)
 hist(stepsPerDay, xlab= &quot;Steps Per Day&quot;, main=&quot;After Filling NA Values with Means&quot;,col=c(&quot;yellow&quot;))
 dev.off()
 </code></pre>
